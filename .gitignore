@@ -1,0 +1,12 @@
+# cache
+.idea/
+.ipynb_checkpoints/
+__pycache__/
+docs/source/*.rst
+.DS_Store
+.python-version
+
+# files
+*.json
+
+# folders

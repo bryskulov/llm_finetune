@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+easydict
+tqdm
+tensorboard
+gdown
+natsort
+torch_tb_profiler
+accelerate
+sentencepiece

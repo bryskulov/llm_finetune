@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  llm-finetune:
+    image: llm-finetune:development
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        PYTHON_VERSION: '3.10'
+        CONDA_ENV_NAME: 'llm-finetune'
+    runtime: nvidia
+
+    container_name: llm-finetune
+    command: /bin/bash  # Command to run inside the container
+
+    volumes:
+      - .:/workspace  # Bind mount the current directory to /workspace in the container
+
+    ports:
+      - "8890:8890"  # Map port 8888 of the host to port 8888 of the container
+
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all  # Make all NVIDIA devices visible inside the container
+
+    shm_size: '32gb'  # Shared memory size
+
+    stdin_open: true  # Corresponds to -i (interactive)
+    tty: true         # Corresponds to -t, allocate a pseudo-TTY
