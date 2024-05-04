@@ -1,6 +1,7 @@
-import os
 import io
 import json
+import os
+
 
 def _make_w_io_base(f, mode: str):
     if not isinstance(f, io.IOBase):
@@ -15,6 +16,7 @@ def _make_r_io_base(f, mode: str):
     if not isinstance(f, io.IOBase):
         f = open(f, mode=mode)
     return f
+
 
 def jload(f, mode="r"):
     """Load a .json file into a dictionary."""
