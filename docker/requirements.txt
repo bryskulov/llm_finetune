@@ -11,3 +11,5 @@ natsort
 torch_tb_profiler
 accelerate
 sentencepiece
+bitsandbytes
+peft

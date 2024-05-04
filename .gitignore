@@ -10,3 +10,5 @@ docs/source/*.rst
 *.json
 
 # folders
+wandb/
+output_dir/

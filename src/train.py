@@ -1,7 +1,8 @@
 import transformers
 
 from transformers import Trainer
-from dataset import ModelArguments, DataArguments, TrainingArguments, SupervisedDataset, DataCollatorForSupervisedDataset, smart_tokenizer_and_embedding_resize
+from dataset import SupervisedDataset, DataCollatorForSupervisedDataset, smart_tokenizer_and_embedding_resize
+from config import ModelArguments, DataArguments, TrainingArguments
 
 
 DEFAULT_PAD_TOKEN = "[PAD]"
@@ -48,9 +49,9 @@ def main():
 
     trainer = Trainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
     print("Successfully loaded the model, data module and trainer")
-    # trainer.train()
-    # trainer.save_state()
-    # trainer.save_model(output_dir=training_args.output_dir)
+    trainer.train()
+    trainer.save_state()
+    trainer.save_model(output_dir=training_args.output_dir)
 
 
 if __name__ == "__main__":
